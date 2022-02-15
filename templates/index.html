@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greenfood</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles/index.css')}}">
+	<link rel="icon" href="{{ url_for('static', filename='icons/vegetables.png')}}">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div id="header">
+			<div id="filter">
+				<button onclick="filtervisibility()"><img src="{{ url_for('static', filename='icons/filter.png')}}"></button>
+			</div>
+
+			<a id="logo" href="{{url_for('index')}}">
+				<img src="{{ url_for('static', filename='icons/vegetables.png')}}">
+				<p>Greenfood</p>
+			</a>
+
+			<div id="search">
+				<img src="{{ url_for('static', filename='icons/loupe.png')}}">
+				<input id="input-search" type="text" placeholder="Pesquisar">
+			</div>
+		</div>
+
+		<div id="menu" class="open">
+			<a id="Fruta" class="category" onclick="selected(this)">
+				<img src="{{ url_for('static', filename='icons/fruits.png')}}">
+				<p>Frutas</p>
+			</a>
+
+			<a id="Vegetal" class="category" onclick="selected(this)">
+				<img src="{{ url_for('static', filename='icons/vegetable.png')}}">
+				<p>Vegetais</p>
+			</a>
+
+			<a id="Castanhas" class="category" onclick="selected(this)">
+				<img src="{{ url_for('static', filename='icons/nuts.png')}}">
+				<p>Castanhas e grãos</p>
+			</a>
+		</div>
+
+		<div id="info" class="open">
+			<p>Desenvolvido por: Giovanna Marinho.</p>
+		</div>
+
+		<div id="items">
+
+		</div>
+
+		<a id="cart" onclick="checkout(carrinho)" href="{{url_for('checkout')}}">
+			<p id="cont-cart">0</p>
+			<img src="{{ url_for('static', filename='icons/cart.png')}}">
+		</a>
+	</div>
+</body>
+<script src="{{ url_for('static', filename='script/data.js')}}"></script>
+<script src="{{ url_for('static', filename='script/index.js')}}"></script>
+</html>
